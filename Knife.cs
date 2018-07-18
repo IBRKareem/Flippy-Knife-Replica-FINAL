@@ -66,11 +66,15 @@ public class Knife : MonoBehaviour {
 		{
 			Restart();
 		}
+		if (rb.isKinematic )
+		Score.scoreValue += 1;
+
 
 	}
 
 	void Restart ()
 	{
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		Score.scoreValue = 0;
 	}
 }

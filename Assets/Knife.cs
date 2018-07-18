@@ -7,6 +7,7 @@ public class Knife : MonoBehaviour {
 	public Rigidbody rb;
 
 	public float force = 5f;
+	public float torque = 20f;
 
 	private Vector2 startSwipe;
 	private Vector2 endSwipe;
@@ -33,6 +34,6 @@ public class Knife : MonoBehaviour {
 		Vector2 swipe = endSwipe - startSwipe;
 
 		rb.AddForce (swipe * force, ForceMode.Impulse);
-
+		rb.AddTorque (0f, 0f, -torque, ForceMode.Impulse);
 	}
 }

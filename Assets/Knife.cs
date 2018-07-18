@@ -6,6 +6,8 @@ public class Knife : MonoBehaviour {
 
 	public Rigidbody rb;
 
+	public float force = 5f;
+
 	private Vector2 startSwipe;
 	private Vector2 endSwipe;
 	// Use this for initialization
@@ -17,11 +19,11 @@ public class Knife : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonDown (0)) 
 		{
-			startSwipe = Input.mousePosition;
+			startSwipe = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 		}
 		if (Input.GetMouseButtonUp (0))
 		{
-			endSwipe = Input.mousePosition;
+			endSwipe = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 			Swipe ();
 		}
 	}
@@ -30,7 +32,7 @@ public class Knife : MonoBehaviour {
 	{
 		Vector2 swipe = endSwipe - startSwipe;
 
-		rb.AddForce (swipe, ForceMode.Impulse);
+		rb.AddForce (swipe * force, ForceMode.Impulse);
 
 	}
 }

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FINAL PROJ FLIPPY KNIFE", "Assembly-CSharp.csproj", "{01928F3A-A549-7FF5-9770-668E2F805126}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FINAL PROJ FLIPPY KNIFE", "Assembly-CSharp-Editor.csproj", "{1CE47308-4B85-9964-338A-D21F390374F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{01928F3A-A549-7FF5-9770-668E2F805126}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01928F3A-A549-7FF5-9770-668E2F805126}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01928F3A-A549-7FF5-9770-668E2F805126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CE47308-4B85-9964-338A-D21F390374F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CE47308-4B85-9964-338A-D21F390374F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CE47308-4B85-9964-338A-D21F390374F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CE47308-4B85-9964-338A-D21F390374F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Knife : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class Knife : MonoBehaviour {
 
 	public float force = 5f;
 	public float torque = 20f;
+
+	private float timeFlying;
 
 	private Vector2 startSwipe;
 	private Vector2 endSwipe;
@@ -31,9 +34,39 @@ public class Knife : MonoBehaviour {
 
 	void Swipe ()
 	{
+		rb.isKinematic = false;
+
+		timeFlying = Time.time;
+
 		Vector2 swipe = endSwipe - startSwipe;
 
 		rb.AddForce (swipe * force, ForceMode.Impulse);
 		rb.AddTorque (0f, 0f, -torque, ForceMode.Impulse);
+	}
+
+	void OnTriggerEnter (Collider col)
+	{
+		if (col.tag == "Block") {
+			rb.isKinematic = true;
+		} else 
+		{
+			Restart();
+		}
+	}
+
+	void OnCollisionEnter ()
+	{
+		float timeInAir = Time.time - timeFlying;
+
+		if (!rb.isKinematic && timeInAir >= .05f)
+		{
+			Restart();
+		}
+
+	}
+
+	void Restart ()
+	{
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 	}
 }
